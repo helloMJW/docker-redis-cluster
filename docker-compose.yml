@@ -14,3 +14,9 @@ services:
       - '7000-7050:7000-7050'
       - '5000-5010:5000-5010'
     network_mode: "host"
+  redis_exporter:
+    image: oliver006/redis_exporter
+    environment:
+      REDIS_ADDR:127.0.0.1:7000
+    ports:
+      - '9121:9121'
